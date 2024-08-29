@@ -14,9 +14,10 @@ const plugin: JupyterFrontEndPlugin<void> = {
   id: 'resource_warning:plugin',
   description: 'A JupyterLab extension.',
   autoStart: true,
-  activate: (app: JupyterFrontEnd) => {
+  activate: async (app: JupyterFrontEnd) => {
     let refreshRate = DEFAULT_REFRESH_RATE;
     const model = new ResourceUsage.Model({ refreshRate });
+    model.refresh();
   }
 };
 
