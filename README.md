@@ -1,6 +1,6 @@
 # notebooks-resource-warning
 
-[![Github Actions Status](https://github.com/EGI-Federation/notebooks-resource-warnings/workflows/Build/badge.svg)](https://github.com/EGI-Federation/notebooks-resource-warnings/actions/workflows/build.yml)
+[![Github Actions Status](https://github.com/EGI-Federation/notebooks-resource-warning/workflows/Build/badge.svg)](https://github.com/EGI-Federation/notebooks-resource-warning/actions/workflows/build.yml)
 
 A JupyterLab extension that shows a notification whenever the usage of memory goes into `warn` status (as provided by the [Jupyter Resource Usage extension](https://github.com/jupyter-server/jupyter-resource-usage)
 
