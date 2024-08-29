@@ -5144,9 +5144,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resource_warning@workspace:.":
+"notebooks-resource-warning@workspace:.":
   version: 0.0.0-use.local
-  resolution: "resource_warning@workspace:."
+  resolution: "notebooks-resource-warning@workspace:."
   dependencies:
     "@jupyter-server/resource-usage": ^1.1.0
     "@jupyterlab/application": ^4.0.0
