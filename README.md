@@ -1,8 +1,8 @@
-# resource_warning
+# notebooks-resource-warning
 
-[![Github Actions Status](https://github.com/enolfc/resource-warnings/workflows/Build/badge.svg)](https://github.com/enolfc/resource-warnings/actions/workflows/build.yml)
+[![Github Actions Status](https://github.com/EGI-Federation/notebooks-resource-warnings/workflows/Build/badge.svg)](https://github.com/EGI-Federation/notebooks-resource-warnings/actions/workflows/build.yml)
 
-A JupyterLab extension.
+A JupyterLab extension that shows a notification whenever the usage of memory goes into `warn` status (as provided by the [Jupyter Resource Usage extension](https://github.com/jupyter-server/jupyter-resource-usage)
 
 ## Requirements
 
@@ -13,7 +13,7 @@ A JupyterLab extension.
 To install the extension, execute:
 
 ```bash
-pip install resource_warning
+pip install notebooks-resource-warning
 ```
 
 ## Uninstall
@@ -21,7 +21,7 @@ pip install resource_warning
 To remove the extension, execute:
 
 ```bash
-pip uninstall resource_warning
+pip uninstall notebooks-resource-warning
 ```
 
 ## Contributing
@@ -36,7 +36,7 @@ The `jlpm` command is JupyterLab's pinned version of
 
 ```bash
 # Clone the repo to your local environment
-# Change directory to the resource_warning directory
+# Change directory to the notebooks-resource-warning directory
 # Install package in development mode
 pip install -e "."
 # Link your development version of the extension with JupyterLab
@@ -65,7 +65,7 @@ jupyter lab build --minimize=False
 ### Development uninstall
 
 ```bash
-pip uninstall resource_warning
+pip uninstall notebooks-resource-warning
 ```
 
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
