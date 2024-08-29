@@ -85,12 +85,14 @@ export namespace ResourceUsage {
         ? Math.min(numBytes / memoryLimit, 1) * 100
         : 0;
       const memwarn = value.limits.memory?.warn;
-      if (memwarn && !this._previousWarn) {
-        this._previousWarn = true;
-        Notification.warning(
-          'Memory usage reached ' + memoryPercent.toFixed() + '%.',
-          { autoClose: 3000 }
-        );
+      if (memwarn) {
+        if (!this._previousWarn) {
+          this._previousWarn = true;
+          Notification.warning(
+            'Memory usage reached ' + memoryPercent.toFixed() + '%.',
+            { autoClose: 3000 }
+          );
+        }
       } else {
         this._previousWarn = false;
       }
