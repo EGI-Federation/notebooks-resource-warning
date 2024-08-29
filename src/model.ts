@@ -1,7 +1,7 @@
 // We cannot easily import the model from the resource-usage extension
-// So I'm taking some code from there for querying the usage api 
+// So I'm taking some code from there for querying the usage api
 //
-// Code extracted from version: 
+// Code extracted from version:
 // https://github.com/jupyter-server/jupyter-resource-usage/commit/41d88a2dc4bc9820f5801223d9830bd8f7c3d1d6
 //
 // Copyright (c) Jupyter Development Team.
@@ -37,11 +37,11 @@ export namespace ResourceUsage {
           Private.factory(),
         frequency: {
           interval: options.refreshRate,
-          backoff: true,
+          backoff: true
         },
-        name: '@jupyterlab/statusbar:ResourceUsage#metrics',
+        name: '@jupyterlab/statusbar:ResourceUsage#metrics'
       });
-      this._poll.ticked.connect((poll) => {
+      this._poll.ticked.connect(poll => {
         const { payload, phase } = poll.state;
         if (phase === 'resolved') {
           this._updateMetricsValues(payload);
@@ -81,16 +81,19 @@ export namespace ResourceUsage {
       const numBytes = value.pss ?? value.rss;
       const memoryLimits = value.limits.memory;
       const memoryLimit = memoryLimits?.pss ?? memoryLimits?.rss ?? null;
-      const memoryPercent = memoryLimit ? 
-	      Math.min(numBytes / memoryLimit, 1) * 100
-              : 0
-      const memwarn = value.limits.memory?.warn
-      if (memwarn && !this._previousWarn) { 
-      	this._previousWarn = true;
-	Notification.warning('Memory usage reached ' + memoryPercent.toFixed() + '%.', { autoClose: 3000 });
+      const memoryPercent = memoryLimit
+        ? Math.min(numBytes / memoryLimit, 1) * 100
+        : 0;
+      const memwarn = value.limits.memory?.warn;
+      if (memwarn && !this._previousWarn) {
+        this._previousWarn = true;
+        Notification.warning(
+          'Memory usage reached ' + memoryPercent.toFixed() + '%.',
+          { autoClose: 3000 }
+        );
       } else {
-      	this._previousWarn = false;
-      } 
+        this._previousWarn = false;
+      }
       this.stateChanged.emit(void 0);
     }
 
