@@ -31,3 +31,6 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           # Fail on errors
           DISABLE_ERRORS: false
+          # this is already done by the other linting action 
+          # and the tsconfig conflicts, so removing
+          VALIDATE_TYPESCRIPT_STANDARD: false
