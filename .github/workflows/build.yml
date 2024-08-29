@@ -36,7 +36,7 @@ jobs:
         python -m pip install .[test]
 
         jupyter labextension list
-        jupyter labextension list 2>&1 | grep -ie "resource_warning.*OK"
+        jupyter labextension list 2>&1 | grep -ie "notebooks-resource-warning.*OK"
         python -m jupyterlab.browser_check
 
     - name: Package the extension
@@ -45,13 +45,13 @@ jobs:
 
         pip install build
         python -m build
-        pip uninstall -y "resource_warning" jupyterlab
+        pip uninstall -y "notebooks-resource-warning" jupyterlab
 
     - name: Upload extension packages
       uses: actions/upload-artifact@v4
       with:
         name: extension-artifacts
-        path: dist/resource_warning*
+        path: dist/notebooks-resource-warning*
         if-no-files-found: error
 
   test_isolated:
@@ -74,11 +74,11 @@ jobs:
         sudo rm -rf $(which node)
         sudo rm -rf $(which node)
 
-        pip install "jupyterlab>=4.0.0,<5" resource_warning*.whl
+        pip install "jupyterlab>=4.0.0,<5" notebooks-resource-warning*.whl
 
 
         jupyter labextension list
-        jupyter labextension list 2>&1 | grep -ie "resource_warning.*OK"
+        jupyter labextension list 2>&1 | grep -ie "notebooks-resource-warning.*OK"
         python -m jupyterlab.browser_check --no-browser-test
 
 
