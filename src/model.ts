@@ -84,7 +84,7 @@ export namespace ResourceUsage {
         if (!this._previousWarn) {
           this._previousWarn = true;
           Notification.warning(
-            'Warning! You\'re using too much memory. Watch the memory usage indicator.',
+            "Warning! You're using too much memory. Watch the memory usage indicator.",
             // Without autoclose option, JupyterLab does not show notification
             // visibly. It puts it into an alert menu with a highlighted bell icon.
             { autoClose: 30000 }
