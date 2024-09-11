@@ -78,19 +78,16 @@ export namespace ResourceUsage {
         return;
       }
 
-      const numBytes = value.pss ?? value.rss;
-      const memoryLimits = value.limits.memory;
-      const memoryLimit = memoryLimits?.pss ?? memoryLimits?.rss ?? null;
-      const memoryPercent = memoryLimit
-        ? Math.min(numBytes / memoryLimit, 1) * 100
-        : 0;
       const memwarn = value.limits.memory?.warn;
+
       if (memwarn) {
         if (!this._previousWarn) {
           this._previousWarn = true;
           Notification.warning(
-            'Memory usage reached ' + memoryPercent.toFixed() + '%.',
-            { autoClose: 3000 }
+            "Warning! You're using too much memory. Watch the memory usage indicator.",
+            // Without autoclose option, JupyterLab does not show notification
+            // visibly. It puts it into an alert menu with a highlighted bell icon.
+            { autoClose: 30000 }
           );
         }
       } else {
