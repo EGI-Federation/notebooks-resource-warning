@@ -1,5 +1,5 @@
 {
-    "name": "resource_warning",
+    "name": "notebooks-resource-warning",
     "version": "0.1.0",
     "description": "A JupyterLab extension that shows a notification when reaching warning level of resource consumption (memory).",
     "keywords": [
